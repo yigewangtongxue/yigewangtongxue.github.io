@@ -1,0 +1,45 @@
+const htmlStr = `
+  <div data-v-2879e730="" class="left">
+    <img data-v-2879e730="" src="//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/f5188ac005a69d272fc6161b3c521d15.svg" class="avatar">
+    <div data-v-2879e730="" class="center">
+    <div data-v-2879e730="" class="profile"><!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!---->
+    <span data-v-2879e730="" class="title">
+      <span data-v-2879e730="">
+        <span data-v-2879e730="">
+          <span data-v-2879e730="">你的代码【[HTML]XMLSerializer-outerHTML-2】</span>
+        </span>
+      </span>
+      <span data-v-2879e730=""><span data-v-2879e730="">
+        <a data-v-2879e730="" target="_blank" href="https://code.juejin.cn/pen/7140949747849756707" class="link-style">
+          https://code.juejin.cn/pen/7140949747849756707
+        </a>
+      </span>
+    </span>
+    <span data-v-2879e730="">
+      <span data-v-2879e730="">
+        <span data-v-2879e730="">已成功发布！</span>
+      </span>
+    </span>
+  </span> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!---->
+  </div>
+  <div data-v-2879e730="" class="info">
+    <span data-v-2879e730="" class="time">2小时前</span>
+  </div></div></div>`;
+
+const doc = new DOMParser().parseFromString(htmlStr, 'text/html');
+const walker = document.createTreeWalker(doc);
+const commentNodes = [];
+while(walker.nextNode()) {
+    const node = walker.currentNode;
+    if (node.nodeType === Node.COMMENT_NODE) {
+      commentNodes.push(node);
+    }
+
+    if (node.nodeName === 'A') {
+      node.textContent = '这是一个标签';
+    }
+}
+
+commentNodes.forEach(node => node.parentNode.removeChild(node));
+
+document.getElementById('app').innerHTML = doc.body.innerHTML;

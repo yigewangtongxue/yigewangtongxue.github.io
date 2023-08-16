@@ -1,0 +1,29 @@
+/*设置背景图片*/
+body {
+    
+    background-size:cover;font-size: 15px;
+}
+/*给表单的边框设置大小,颜色和不透明度*/
+.form {
+    background: rgba(255,255,255,0.9);
+    width:400px;margin:50px auto;
+}
+/*设置字体和大小*/
+label {
+    font-family: Arial;font-size: 15px
+}
+
+/*为几个输入框设置padding,防止和图标重合*/
+input[type="text"],input[type="password"],input[type="email"]{
+    padding-left:26px;
+}
+.form-title{
+    padding-top:20px;
+}
+#button{
+    padding-bottom: 50px;
+}
+#register,#loginEmail,#loginTelephone{
+    width: 53.6px;
+    height: 33.6px;
+}

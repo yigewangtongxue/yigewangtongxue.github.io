@@ -1,0 +1,13 @@
+body{
+    height: 150vh;
+}
+tr{
+    height: 180px;
+}
+th{
+    width: 345px;
+}
+th>img{
+    width: 345px;
+    height: 180px;
+}

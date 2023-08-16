@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Login</title>
+
+    <!--用百度的静态资源库的cdn安装bootstrap环境-->
+    <!-- Bootstrap 核心 CSS 文件 -->
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/1.3.6/axios.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="form row">
+        <form class="form-horizontal col-sm-offset-3 col-md-offset-3">
+            <h3 class="form-title">登录</h3>
+            <div class="col-sm-9 col-md-9">
+                <div class="form-group">
+                    <!--        用户名图标和用户名输入框            -->
+                    <input class="form-control" type="text" name="account" id="account" placeholder="请输入手机号" >
+                </div>
+                    <!--        密码图标和密码输入框                -->
+                <div class="form-group">
+                    
+                    <input class="form-control " type="password" name="password" id="password" placeholder="请输入密码" >
+                </div>
+                    <!--        用超链接跳转到注册页面               -->
+                <div class="form-group">
+                    <br>
+                    <a href="register.html">没有账号？立即注册</a>
+                </div>
+                    <!--         登录按钮           -->
+                <div class="form-group">
+                    <input value="登录" class="btn btn-success pull-right" id="loginTelephone">
+                    <a href='./emailLogin.html' class="btn btn-success pull-left">邮箱登录</a>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+<script src="./js/init.js"></script>
+<script type="module" src="./js/login2.js"></script>
+</body>
+</html>

@@ -18,7 +18,7 @@ new Vue({
         <a-select
           v-if="modeType == 1"
           class="lucky-draw-custom"
-          placeholder="请选择奖项"
+          placeholder="请选择"
           :disabled="isLuckyDraw"
           @change="handleModeTypeChange"
         >
@@ -36,11 +36,11 @@ new Vue({
           :class="modeType == 1 ? 'lucky-draw-number-custom' : 'lucky-draw-number'"
           :disabled="isLuckyDraw"
           v-model="numberPeople"
-          placeholder="本轮抽奖人数"
+          placeholder="本轮抽取人数"
         />
         <!-- 抽奖按钮 -->
         <a-button @click="luckyDraw">
-          {{ isLuckyDraw ?  luckyDrawTime ? '停止抽奖' : '结束本轮' : '开始抽奖' }}
+          {{ isLuckyDraw ?  luckyDrawTime ? '停止' : '结束本轮' : '开始' }}
         </a-button>
       </div>
       <!-- 右边工具栏 -->
@@ -120,23 +120,23 @@ new Vue({
       } else {
         // 准备开始抽奖
         if (this.modeType == 1 && !this.custom) {
-          this.$message.error('请选择奖项')
+          this.$message.error('请选择')
           return
         }
         if (!this.numberPeople) {
-          this.$message.error('请设置抽奖人数')
+          this.$message.error('请设置人数')
           return
         }
         if (!REG_IS_INTEGER(this.numberPeople)) {
-          this.$message.error('抽奖人数必须为整数')
+          this.$message.error('人数必须为整数')
           return
         }
         if (this.numberPeople <= 0) {
-          this.$message.error('抽奖人数必须大于0')
+          this.$message.error('人数必须大于0')
           return
         }
         if (this.numberPeople > users.length) {
-          this.$message.error(`抽奖名单共 ${users.length} 人，填写抽奖人数必须小于或等于 ${users.length} 人`)
+          this.$message.error(`名单共 ${users.length} 人，填写人数必须小于或等于 ${users.length} 人`)
           return
         }
         // 开始抽奖

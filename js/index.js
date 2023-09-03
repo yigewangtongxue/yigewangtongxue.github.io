@@ -10,7 +10,7 @@ const CustomLuckyDrawDrawer = {
   },
   template: `
     <a-drawer
-      title="自定义奖项"
+      title="自定义"
       width="500px"
       placement="right"
       :visible="visible"
@@ -19,7 +19,7 @@ const CustomLuckyDrawDrawer = {
       <!-- 提示 -->
       <a-alert
         class="custom-hint" 
-        message="名称为必填，标签为选填，关闭本窗口会自动保存，并清理名称为空的奖项！"
+        message="这是一个测试"
         type="info"
         show-icon
       />
@@ -28,7 +28,7 @@ const CustomLuckyDrawDrawer = {
         <div>名称：</div>
         <a-input
           class="custom-item-input-name"
-          placeholder="例如：一等奖"
+          placeholder="test"
           v-model="item.name"
         />
         <div style="margin-left: 20px;">标签：</div>
@@ -53,7 +53,7 @@ const CustomLuckyDrawDrawer = {
         type="dashed"
         @click="touchAdd"
       >
-        新建奖项
+        新建
       </a-button>
     </a-drawer>
   `,
@@ -132,7 +132,7 @@ new Vue({
         :disabled="isLoading"
         @click="touchLuckyDrawPage"
       >
-        进入抽奖池
+        进入人员池
         <a-icon type="crown" />
       </a-button>
       <!-- 切换模式 -->
@@ -141,8 +141,8 @@ new Vue({
           v-model="modeType"
           @change="handleImportModeChange"
         >
-          <a-select-option :value="0">默认抽奖模式</a-select-option>
-          <a-select-option :value="1">自定义奖项模式</a-select-option>
+          <a-select-option :value="0">默认模式</a-select-option>
+          <a-select-option :value="1">自定义模式</a-select-option>
         </a-select>
         <a-icon
           v-if="modeType == 1 && isImportMode"

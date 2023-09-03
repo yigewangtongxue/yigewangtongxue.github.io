@@ -169,7 +169,7 @@ new Vue({
         <a-icon type="reload" />
       </a-button>
       <!-- 提示 -->
-      <span class="import-hint">小提示：上传名单只支持 .xlsx、.xls、.csv 文件格式，纯名单即可！已中奖用户不会重复中奖！</span>
+      <span class="import-hint">这是一个测试</span>
       <!-- 自定义抽奖组件 -->
       <custom-lucky-draw-drawer ref="custom-lucky-draw-drawer" @close="onCloseCustom"></custom-lucky-draw-drawer>
     </div>
